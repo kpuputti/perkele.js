@@ -1,52 +1,156 @@
 @import "compass/reset";
 @import "compass/css3";
 
-$slide_bg_color: #fff;
-$slide_border_color: #ddd;
-$slide_padding: 2em;
-
-$header_height: 5em;
-$footer_height: 5em;
-
-html {
+html, body {
     height: 100%;
-}
-body {
-    height: 100%;
-    @include box-sizing(border-box);
+    overflow: hidden;
 }
 
 article {
     display: none;
-    position: relative;
+    position: absolute;
+    top: 0;
+    left: 0;
     @include box-sizing(border-box);
     height: 100%;
-    padding-top: $header_height + $slide_padding;
-    padding-right: $slide_padding;
-    padding-left: $slide_padding;
-    padding-bottom: $footer_height + $slide_padding;
-
+    width: 100%;
     overflow: hidden;
-    background-color: #666;
+    -webkit-animation-timing-function: ease-out;
+    -moz-animation-timing-function: ease-out;
+    -ms-animation-timing-function: ease-out;
+    -o-animation-timing-function: ease-out;
+    animation-timing-function: ease-out;
 
-    header {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: $header_height;
-        line-height: $header_height;
-        background-color: #fff;
+    -webkit-animation-duration: 0.5s;
+    -moz-animation-duration: 0.5s;
+    -ms-animation-duration: 0.5s;
+    -o-animation-duration: 0.5s;
+    animation-duration: 0.5s;
+
+    &.current {
+        display: block;
     }
-    footer {
-        position: absolute;
-        bottom: 0;
-        left: 0;
-        width: 100%;
-        height: $footer_height;
-        background-color: #fff;
+    &.animate-from {
+        display: block;
+        -webkit-animation-name: animate-from;
+        -moz-animation-name: animate-from;
+        -ms-animation-name: animate-from;
+        -o-animation-name: animate-from;
+        -animation-name: animate-from;
+    }
+    &.animate-to {
+        display: block;
+        -webkit-animation-name: animate-to;
+        -moz-animation-name: animate-to;
+        -ms-animation-name: animate-to;
+        -o-animation-name: animate-to;
+        -animation-name: animate-to;
+    }
+    &.animate-from-reverse {
+        display: block;
+        -webkit-animation-name: animate-from-reverse;
+        -moz-animation-name: animate-from-reverse;
+        -ms-animation-name: animate-from-reverse;
+        -o-animation-name: animate-from-reverse;
+        -animation-name: animate-from-reverse;
+    }
+    &.animate-to-reverse {
+        display: block;
+        -webkit-animation-name: animate-to-reverse;
+        -moz-animation-name: animate-to-reverse;
+        -ms-animation-name: animate-to-reverse;
+        -o-animation-name: animate-to-reverse;
+        -animation-name: animate-to-reverse;
     }
 }
-article.current {
-    display: block;
+
+/* == Keyframe animations == */
+
+/* webkit */
+@-webkit-keyframes animate-from {
+    from { left: 0; }
+    to { left: -100%; }
+}
+@-webkit-keyframes animate-to {
+    from { left: 100%; }
+    to { left: 0%; }
+}
+@-webkit-keyframes animate-from-reverse {
+    from { left: 0; }
+    to { left: 100%; }
+}
+@-webkit-keyframes animate-to-reverse {
+    from { left: -100%; }
+    to { left: 0%; }
+}
+
+/* moz */
+@-moz-keyframes animate-from {
+    from { left: 0; }
+    to { left: -100%; }
+}
+@-moz-keyframes animate-to {
+    from { left: 100%; }
+    to { left: 0%; }
+}
+@-moz-keyframes animate-from-reverse {
+    from { left: 0; }
+    to { left: 100%; }
+}
+@-moz-keyframes animate-to-reverse {
+    from { left: -100%; }
+    to { left: 0%; }
+}
+/* ms */
+@-ms-keyframes animate-from {
+    from { left: 0; }
+    to { left: -100%; }
+}
+@-ms-keyframes animate-to {
+    from { left: 100%; }
+    to { left: 0%; }
+}
+@-ms-keyframes animate-from-reverse {
+    from { left: 0; }
+    to { left: 100%; }
+}
+@-ms-keyframes animate-to-reverse {
+    from { left: -100%; }
+    to { left: 0%; }
+}
+
+/* o */
+@-o-keyframes animate-from {
+    from { left: 0; }
+    to { left: -100%; }
+}
+@-o-keyframes animate-to {
+    from { left: 100%; }
+    to { left: 0%; }
+}
+@-o-keyframes animate-from-reverse {
+    from { left: 0; }
+    to { left: 100%; }
+}
+@-o-keyframes animate-to-reverse {
+    from { left: -100%; }
+    to { left: 0%; }
+}
+
+/* without prefix */
+@keyframes animate-from {
+    from { left: 0; }
+    to { left: -100%; }
+}
+@keyframes animate-to {
+    from { left: 100%; }
+    to { left: 0%; }
+}
+@keyframes animate-from-reverse {
+    from { left: 0; }
+    to { left: 100%; }
+}
+@keyframes animate-to-reverse {
+    from { left: -100%; }
+    to { left: 0%; }
 }

@@ -14,28 +14,61 @@
     };
 
     var perkele = {
+        busy: false,
         currentIndex: null,
         slides: []
     };
 
     // Show slide with the given index
-    perkele.show = function (index) {
-        if (index < 0 || index >= perkele.slides.length) {
+    perkele.show = function (index, reverse) {
+        log('show index:', index, 'with current:', perkele.currentIndex);
+        if (perkele.busy || index < 0 || index >= perkele.slides.length) {
+            log('cannot show');
             return;
         }
-        var current = document.querySelector('article.current');
-        if (current) {
-            current.className = '';
+        if (perkele.currentIndex === null) {
+            log('no current, show:', index);
+            perkele.slides[index].className = 'current';
+            perkele.currentIndex = index;
+            return;
         }
-        perkele.slides[index].className = 'current';
-        perkele.currentIndex = index;
+        perkele.busy = true;
+
+        var width = window.innerWidth;
+        var current = perkele.slides[perkele.currentIndex];
+        var next = perkele.slides[index];
+        var currentStyle = current.style;
+        var nextStyle = next.style;
+
+        log('from', perkele.currentIndex, 'to', index);
+
+        currentStyle.width = width + 'px';
+        nextStyle.width = width + 'px';
+
+        currentStyle.left = '0';
+        nextStyle.left = (reverse ? '-100%' : '100%') + 'px';
+
+        var rev = reverse ? '-reverse' : '';
+        current.className = 'animate-from' + rev;
+        next.className = 'current animate-to' + rev;
+
+        window.setTimeout(function () {
+            current.className = '';
+            next.className = 'current';
+
+            currentStyle.left = '0';
+            nextStyle.left = '0';
+
+            perkele.currentIndex = index;
+            perkele.busy = false;
+        }, 500);
     };
 
     // Show previous slide
     perkele.prev = function () {
         if (perkele.currentIndex !== null) {
             log('prev');
-            perkele.show(perkele.currentIndex - 1);
+            perkele.show(perkele.currentIndex - 1, true);
         }
     };
 

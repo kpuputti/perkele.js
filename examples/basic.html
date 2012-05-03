@@ -3,34 +3,36 @@
   <head>
     <meta charset="utf-8">
     <title>Basic</title>
-    <link rel="stylesheet" href="../src/css/perkele.css">
+    <link rel="stylesheet" href="../dist/perkele.css">
+    <style>
+      body { background-color: #222; color: #eee; font-size: 3em; }
+      article { }
+      h1 { font-size: 2em; background-color: #333; padding: 0.2em; }
+      p { margin: 1em; }
+      ul { margin: 1em; padding-left: 1em; list-style: disc; }
+      li { margin-bottom: 0.5em; }
+    </style>
   </head>
   <body>
 
     <article>
-      <header>
-        <h1>slide 1</h1>
-      </header>
+      <h1>slide 1</h1>
       <p>slide content</p>
-      <footer></footer>
     </article>
 
     <article>
-      <header>
-        <h1>slide 2</h1>
-      </header>
-      <p>slide content</p>
-      <footer></footer>
+      <h1>slide 2</h1>
+      <ul>
+        <li>item 1</li>
+        <li>item 2</li>
+        <li>item 3</li>
+      </ul>
     </article>
 
     <article>
-      <header>
-        <h1>slide 3</h1>
-      </header>
-      <p>slide content</p>
-      <footer></footer>
+      <h1>slide 3</h1>
     </article>
 
-    <script src="../dist/perkele-0.1.0.min.js"></script>
+    <script src="../dist/perkele.min.js"></script>
   </body>
 </html>
