@@ -12,7 +12,7 @@ module.exports = function (grunt) {
                 'Kimmo Puputti; Licensed MIT */'
         },
         lint: {
-            files: ['grunt.js', 'src/**/*.js', 'test/**/*.js']
+            all: ['grunt.js', 'src/js/perkele.js']
         },
         concat: {
             dist: {
@@ -26,9 +26,21 @@ module.exports = function (grunt) {
                 dest: 'dist/perkele.min.js'
             }
         },
+        exec: {
+            sass: {
+                command: 'compass compile',
+                stdout: true
+            }
+        },
         watch: {
-            files: '<config:lint.files>',
-            tasks: 'lint'
+            scripts: {
+                files: '<config:lint.all>',
+                tasks: 'lint concat min'
+            },
+            sass: {
+                files: 'src/sass/perkele.scss',
+                tasks: 'exec'
+            }
         },
         jshint: {
             options: {
@@ -49,7 +61,9 @@ module.exports = function (grunt) {
         uglify: {}
     });
 
+    grunt.loadNpmTasks('grunt-exec');
+
     // Default task.
-    grunt.registerTask('default', 'lint concat min');
+    grunt.registerTask('default', 'lint concat min exec');
 
 };
