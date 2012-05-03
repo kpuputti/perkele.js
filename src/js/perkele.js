@@ -1,7 +1,7 @@
 /*jslint white: true, devel: true, onevar: false, undef: true, nomen: false,
   regexp: true, plusplus: false, bitwise: true, newcap: true, maxerr: 50,
   indent: 4 */
-/*global window: false, document: false */
+/*global window: false, document: false, define: false */
 
 (function () {
 
@@ -69,6 +69,15 @@
         }
         document.body.addEventListener('keyup', perkele._onKeyUp, false);
     };
+
+    // Add AMD support for an AMD environment, or expose as global
+    if (typeof define === 'function' && define.amd) {
+        define(function () {
+            return perkele;
+        });
+    } else {
+        window.perkele = perkele;
+    }
 
     window.addEventListener('DOMContentLoaded', perkele.start, false);
 
