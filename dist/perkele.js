@@ -2,7 +2,7 @@
 * https://github.com/kpuputti/perkele.js
 * Copyright (c) 2012 Kimmo Puputti; Licensed MIT */
 
-/*global window: false, document: false */
+/*global window: false, document: false, define: false */
 
 (function () {
 
@@ -70,6 +70,15 @@
         }
         document.body.addEventListener('keyup', perkele._onKeyUp, false);
     };
+
+    // Add AMD support for an AMD environment, or expose as global
+    if (typeof define === 'function' && define.amd) {
+        define(function () {
+            return perkele;
+        });
+    } else {
+        window.perkele = perkele;
+    }
 
     window.addEventListener('DOMContentLoaded', perkele.start, false);
 

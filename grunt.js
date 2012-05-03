@@ -17,13 +17,13 @@ module.exports = function (grunt) {
         concat: {
             dist: {
                 src: ['<banner:meta.banner>', '<file_strip_banner:src/js/perkele.js>'],
-                dest: 'dist/perkele-<%= meta.version %>.js'
+                dest: 'dist/perkele.js'
             }
         },
         min: {
             dist: {
                 src: ['<banner:meta.banner>', '<config:concat.dist.dest>'],
-                dest: 'dist/perkele-<%= meta.version %>.min.js'
+                dest: 'dist/perkele.min.js'
             }
         },
         watch: {
