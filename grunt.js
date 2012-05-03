@@ -5,33 +5,30 @@ module.exports = function (grunt) {
     grunt.initConfig({
         meta: {
             version: '0.1.0',
-            banner: '/*! PROJECT_NAME - v<%= meta.version %> - ' +
+            banner: '/*! perkele.js - v<%= meta.version %> - ' +
                 '<%= grunt.template.today("yyyy-mm-dd") %>\n' +
-                '* http://PROJECT_WEBSITE/\n' +
+                '* https://github.com/kpuputti/perkele.js\n' +
                 '* Copyright (c) <%= grunt.template.today("yyyy") %> ' +
-                'YOUR_NAME; Licensed MIT */'
+                'Kimmo Puputti; Licensed MIT */'
         },
         lint: {
             files: ['grunt.js', 'src/**/*.js', 'test/**/*.js']
         },
-        qunit: {
-            files: ['test/**/*.html']
-        },
         concat: {
             dist: {
-                src: ['<banner:meta.banner>', '<file_strip_banner:src/FILE_NAME.js>'],
-                dest: 'dist/FILE_NAME.js'
+                src: ['<banner:meta.banner>', '<file_strip_banner:src/js/perkele.js>'],
+                dest: 'dist/perkele-<%= meta.version %>.js'
             }
         },
         min: {
             dist: {
                 src: ['<banner:meta.banner>', '<config:concat.dist.dest>'],
-                dest: 'dist/FILE_NAME.min.js'
+                dest: 'dist/perkele-<%= meta.version %>.min.js'
             }
         },
         watch: {
             files: '<config:lint.files>',
-            tasks: 'lint qunit'
+            tasks: 'lint'
         },
         jshint: {
             options: {
@@ -53,6 +50,6 @@ module.exports = function (grunt) {
     });
 
     // Default task.
-    grunt.registerTask('default', 'lint qunit concat min');
+    grunt.registerTask('default', 'lint concat min');
 
 };
