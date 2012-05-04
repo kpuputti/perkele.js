@@ -7,7 +7,6 @@
     <style>
       body {
           color: #eee;
-          font-size: 4em;
           background:
               -webkit-radial-gradient(black 15%, transparent 16%) 0 0,
               -webkit-radial-gradient(black 15%, transparent 16%) 8px 8px,
@@ -17,38 +16,91 @@
           background-size: 16px 16px;
       }
       article { }
-      h1 { font-size: 1.3em; padding: 0.2em; }
+      h1 { font-size: 4em; padding: 0.2em; }
+      h2 { font-size: 3em; padding: 0.2em; font-style: italic; }
       .center { text-align: center; }
+      .top-margin { margin-top: 3em; }
+      blockquote { font-size: 2.4em; text-align: center; margin: 1em; }
       p { margin: 1em; }
-      ul { margin: 1em; padding-left: 1em; list-style: disc; }
+      ul { font-size: 3em; margin: 1em; padding-left: 1em; list-style: disc; }
       li { margin-bottom: 0.5em; }
+      a { color: #eee; text-decoration: none; text-decoration: underline; }
     </style>
   </head>
   <body>
 
     <article>
-      <h1 class="center" style="margin-top: 3em; ">WPO Basics</h1>
+      <h1 class="center top-margin">WPO Basics</h1>
     </article>
 
     <article>
-      <h1>Web Performance Optimization</h1>
-      <ul>
-        <li>What?</li>
-        <li>Why?</li>
-        <li>How?</li>
-      </ul>
-    </article>
-
-    <article>
-      <h1>What?</h1>
+      <h1 class="center top-margin">Web Performance Optimization</h1>
+      <h2 class="center">(mostly frontend optimization)</h2>
     </article>
 
     <article>
       <h1>Why?</h1>
+      <h2 style="margin-top: 1em;"><a href="http://www.stevesouders.com/blog/2012/02/10/the-performance-golden-rule/">Performance Golden Rule:</a></h2>
+      <blockquote cite="http://www.stevesouders.com/blog/2012/02/10/the-performance-golden-rule/">
+        "80-90% of the end-user response time is spent on the frontend."
+      </blockquote>
+      <h2>Bad performance:</h2>
+      <ul>
+        <li>Reduces users</li>
+        <li>Reduces revenue</li>
+        <li>Is unprofessional</li>
+        <li>and...</li>
+      </ul>
+    </article>
+
+    <article>
+      <p class="center"><img src="this-is-the-web.png" alt=""></p>
+    </article>
+
+    <article>
+      <p class="center"><img src="this-will-bethe-web.png" alt=""></p>
+    </article>
+
+    <article>
+      <h1>JavaScript: The Good Parts (2008)</h1>
+      <p class="center top-margin">
+        <img src="good-parts.jpg" width="300" height="300" alt="JavaScript: The Good Parts">
+      </p>
+    </article>
+
+    <article>
+      <h1>High Performance Web Sites (2007)</h1>
+      <h2>Essential Knowledge for Front-End Engineers</h2>
+      <p class="center top-margin">
+        <img src="hpws.jpg" width="300" height="300" alt="High Performance Web Sites">
+      </p>
+    </article>
+
+    <article>
+      <h1>Even Faster Web Sites (2009)</h1>
+      <h2>Performance Best Practices for Web Developers</h2>
+      <p class="center top-margin">
+        <img src="efws.jpg" width="300" height="300" alt="Even Faster Web Sites">
+      </p>
+    </article>
+
+    <article>
+      <h1>High Performance JavaScript (2010)</h1>
+      <h2>Build Faster Web Application Interfaces</h2>
+      <p class="center top-margin">
+        <img src="hpjs.jpg" width="300" height="300" alt="High Performance JavaScript">
+      </p>
     </article>
 
     <article>
       <h1>How?</h1>
+      <ul>
+        <li>Read the books</li>
+        <li><a href="http://stevesouders.com/">stevesouders.com</a></li>
+        <li><a href="http://developer.yahoo.com/performance/rules.html">YAHOO! best practices</a></li>
+        <li><a href="http://yslow.org/">YSlow</a></li>
+        <li><a href="https://developers.google.com/speed/pagespeed/">Page Speed</a></li>
+      </ul>
     </article>
 
     <script src="perkele.min.js"></script>
