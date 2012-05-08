@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>AppCache</title>
+    <link rel="stylesheet" href="perkele.css">
+    <link href='http://fonts.googleapis.com/css?family=Short+Stack' rel='stylesheet' type='text/css'>
+    <style>
+      body {
+          font-family: 'Short Stack', cursive;
+          color: #444;
+          background-image: url(hellokitty.png);
+      }
+      article { background-color: rgba(255, 255, 255, 0.9); }
+      h1, h2 { color: #f00; }
+      h1 { font-size: 4em; padding: 0.2em; }
+      h2 { font-size: 3em; padding: 0.2em; font-style: italic; }
+      code { font-family: monospace; background-color: #eee; }
+      pre { font-size: 1.6em; }
+      .manifest-example { width: 25em; background-color: #eee; margin-left: 3em; }
+      .center { text-align: center; }
+      .top-margin { margin-top: 3em; }
+      .author { font-style: italic; font-size: 1.4em; }
+      .note { font-size: 2em; }
+      blockquote { font-size: 2.4em; text-align: center; margin: 1em; }
+      p { margin: 1em; }
+      ul { font-size: 3em; margin: 1em; padding-left: 1em; list-style: disc; }
+      li { margin-bottom: 0.5em; }
+      a { color: #222; text-decoration: none; text-decoration: underline; }
+    </style>
+  </head>
+  <body>
+
+    <article>
+      <h1 class="center top-margin">Why AppCache is a PITA</h1>
+      <h2 class="center">and why should you use it anyways</h2>
+      <p class="center author">by Kimmo Puputti</p>
+    </article>
+
+    <article>
+      <h1>WAT? - simple</h1>
+      <p><img src="manifest.png" width="598" height="98" alt="manifest"></p>
+      <ul>
+        <li>MIME type <code>text/cache-manifest</code></li>
+      </ul>
+      <pre class="manifest-example"><code>CACHE MANIFEST
+
+# version 0.1
+
+CACHE:
+/js/app.js
+/css/app.css
+/img/sprite.png
+
+NETWORK:
+*
+</code></pre>
+    </article>
+
+    <article>
+      <h1>Kewl</h1>
+      <ul>
+        <li>Easy setup</li>
+        <li>Full offline support</li>
+        <li>Takes a _lot_ of the load off the server</li>
+        <li>Degrades gracefully</li>
+        <li>Dedicated long-term cache space instead of browser-global cache</li>
+      </ul>
+      <p style="font-size: 2em;">Just like in Strömsö?</p>
+    </article>
+
+    <article>
+      <p class="center" style="margin-top: 5em;"><img src="facepalm-cat.jpg" alt="facepalm cat"></p>
+    </article>
+
+    <article>
+      <h1>Hold your horses</h1>
+      <ul>
+        <li>Dev-mode hassles</li>
+        <li>A single 404 invalidates the _whole_ cache</li>
+        <li>The HTML doc cached always (wait what?)</li>
+        <li>No granular JS API </li>
+        <li>What about RWD and images?</li>
+        <li>(lack of) user control or knowledge of offline support</li>
+        <li>So you have an update...</li>
+      </ul>
+    </article>
+
+    <article>
+      <h1>WTF?</h1>
+      <p class="center" style="margin-top: 4em;"><img src="prompt.png" alt="update prompt"></p>
+    </article>
+
+    <article>
+      <h1>WTF?</h1>
+      <p class="center" style="margin-top: 4em;"><img src="update-flow.png" alt="update flow"></p>
+    </article>
+
+    <article>
+      <h1>Moar</h1>
+      <ul>
+        <li>Use it, but be careful with it</li>
+        <li><a href="http://appcachefacts.info/">http://appcachefacts.info/</a></li>
+        <li><a href="http://www.alistapart.com/articles/application-cache-is-a-douchebag/">A List Apart: Application Cache is a Douchebag</a> by Jake Archibald</li>
+        <li><a href="http://lanyrd.com/2012/jsconf-us/sqxcz/">Application Cache: Douchebag</a> slides by Jake Archibald</li>
+        <li><a href="http://www.stevesouders.com/blog/2011/10/03/improving-app-cache/">Improving app cache</a> by Steve Souders</li>
+        <li>TJEU: <a href="chrome://appcache-internals/">chrome://appcache-internals/</a></li>
+      </ul>
+    </article>
+
+    <script src="perkele.min.js"></script>
+  </body>
+</html>
