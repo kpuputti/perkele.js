@@ -17,6 +17,7 @@
             article { }
             .outline, h1, h2, h3 { font-size: 2em; }
             i { font-style: italic; }
+            code { font-family: Monospace; color: #444; }
             h1 { padding: 0.2em; font-weight: bold; }
             h2 { padding: 0.2em; font-style: italic; }
             ul { padding-left: 2em; margin-top: 1em; list-style-type: square;}
@@ -46,11 +47,27 @@
             <h1>npm</h1>
             <ul>
                 <li><a href="https://npmjs.org/">https://npmjs.org/</a></li>
+                <li>by <a href="https://twitter.com/izs">@izs</a></li>
                 <li>
-                    <i>Contrary to the belief of many, "npm" is not in fact an
+                    From FAQ: <i>Contrary to the belief of many, "npm" is not in fact an
                     abbreviation for "Node Package Manager". It is a recursive
                     bacronymic abbreviation for "npm is not an acronym".</i>
                 </li>
+                <li>js lib dependency management and distribution</li>
+                <li>(mostly) for Node.js</li>
+                <li>distributed with Node.js</li>
+                <li>22 063 packages (2013-02-01)</li>
+            </ul>
+        </article>
+        <article>
+            <h1>npm</h1>
+            <ul>
+                <li><a href="http://package.json.nodejitsu.com/">package.json</a></li>
+                <li><code>npm install -g [package]</code> for command line tools</li>
+                <li><code>npm install [package]</code> for local packages in <code>node_modules/</code></li>
+                <li>packages have their local <code>node_modules</code> dir for dependencies</li>
+                <li>npm + <a href="http://package.json.nodejitsu.com/">Grunt</a> == WORKFLOW_AWESOME</li>
+                <li><code>npm install &amp;&amp; grunt</code> and you're all set up!</li>
             </ul>
         </article>
 
@@ -58,6 +75,53 @@
             <h1>bower</h1>
             <ul>
                 <li><a href="http://twitter.github.com/bower/">http://twitter.github.com/bower/</a></li>
+                <li>by Twitter</li>
+                <li><code>npm install -g bower</code></li>
+                <li>images, CSS, JavaScript</li>
+                <li>Offers only low-level dependency managements</li>
+                <li><a href="http://sindresorhus.com/bower-components/">869 components</a> (2013-02-01)</li>
+                <li>Used by <a href="http://yeoman.io/">Yeoman</a></li>
+                <li>flat <code>components</code> dir with all dependencies</li>
+            </ul>
+        </article>
+
+        <article>
+            <h1>bower</h1>
+            <ul>
+                <li><code>bower install jquery</code> creates
+                    <pre style="margin-top: 1em;"><code>components/
+└── jquery
+    ├── component.json
+    ├── composer.json
+    ├── jquery.js
+    └── jquery.min.js</code></pre>
+                </li>
+            </ul>
+        </article>
+
+        <article>
+            <h1>bower</h1>
+            <ul>
+                <li><code>bower install jquery</code></li>
+                <li><code>bower install git://github.com/components/jquery.git</code></li>
+                <li><code>bower install http://foo.com/jquery.awesome-plugin.js</code></li>
+                <li><code>bower install jquery#1.8.1</code></li>
+                <li><code>bower install --save jquery</code> adds entry to <code>component.json</code></li>
+                <li><code>bower update jquery-ui</code></li>
+            </ul>
+        </article>
+
+        <article>
+            <h1>bower</h1>
+            <ul>
+                <li>component.json:<pre style="margin-top: 1em;"><code>{
+  "name": "myProject",
+  "version": "1.0.0",
+  "main": ["./path/to/app.css", "./path/to/app.js", "./path/to/sprite.img"],
+  "dependencies": {
+    "jquery": "~1.7.2"
+  }
+}</code></pre></li>
             </ul>
         </article>
 
@@ -86,6 +150,15 @@
             <h1>Jam</h1>
             <ul>
                 <li><a href="http://jamjs.org/">http://jamjs.org/</a></li>
+            </ul>
+        </article>
+
+        <article>
+            <h1>Summary</h1>
+            <ul>
+                <li>Long live small specialized libs!</li>
+                <li><a href="http://dailyjs.com/2013/01/28/components/">Confused About Components</a> in DailyJS</li>
+                <li><a href="http://wibblycode.wordpress.com/2013/01/01/the-state-of-javascript-package-management/">The State of Javascript Package Management</a></li>
             </ul>
         </article>
 
