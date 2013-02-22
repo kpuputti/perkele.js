@@ -35,7 +35,7 @@
         <article>
             <ul class="outline">
                 <li>npm</li>
-                <li>bower</li>
+                <li>Bower</li>
                 <li>Ender</li>
                 <li>volo</li>
                 <li>component</li>
@@ -72,21 +72,21 @@
         </article>
 
         <article>
-            <h1>bower</h1>
+            <h1>Bower</h1>
             <ul>
                 <li><a href="http://twitter.github.com/bower/">http://twitter.github.com/bower/</a></li>
                 <li>by Twitter</li>
                 <li><code>npm install -g bower</code></li>
                 <li>images, CSS, JavaScript</li>
-                <li>Offers only low-level dependency management</li>
+                <li>offers only low-level dependency management</li>
                 <li><a href="http://sindresorhus.com/bower-components/">869 components</a> (2013-02-01)</li>
-                <li>Used by <a href="http://yeoman.io/">Yeoman</a></li>
+                <li>used by <a href="http://yeoman.io/">Yeoman</a></li>
                 <li>flat <code>components</code> dir with all dependencies</li>
             </ul>
         </article>
 
         <article>
-            <h1>bower</h1>
+            <h1>Bower</h1>
             <ul>
                 <li><code>bower install jquery</code> creates
                     <pre style="margin-top: 1em;"><code>components/
@@ -100,7 +100,7 @@
         </article>
 
         <article>
-            <h1>bower</h1>
+            <h1>Bower</h1>
             <ul>
                 <li><code>bower install jquery</code></li>
                 <li><code>bower install git://github.com/components/jquery.git</code></li>
@@ -112,7 +112,7 @@
         </article>
 
         <article>
-            <h1>bower</h1>
+            <h1>Bower</h1>
             <ul>
                 <li>component.json:<pre style="margin-top: 1em;"><code>{
   "name": "myProject",
@@ -132,7 +132,7 @@
                 <li><code>npm install -g ender</code></li>
                 <li>dependency manager and build tool</li>
                 <li>CommonJS modules</li>
-                <li>Uses npm modules that have the <i>ender</i> keyword in their <code>package.json</code></li>
+                <li>uses npm modules that have the <i>ender</i> keyword in their <code>package.json</code></li>
                 <li>212 registered packages (2013-02-01)</li>
             </ul>
         </article>
@@ -164,7 +164,44 @@
             <h1>volo</h1>
             <ul>
                 <li><a href="http://volojs.org/">http://volojs.org/</a></li>
+                <li>by <a href="https://twitter.com/jrburke">@jrburke</a></li>
+                <li><code>npm install -g volo</code></li>
                 <li>AMD or CommonJS modules</li>
+                <li><i>dependency manager and project creation tool that favors GitHub for the package repository</i></li>
+                <li><code>volo</code> key in <code>package.json</code></li>
+                <li>automating workflow with a <code>volofile</code></li>
+                <li>kinda like Grunt + Bower, with AMD focus</li>
+            </ul>
+        </article>
+
+        <article>
+            <h1>volo</h1>
+            <ul>
+                <li><code>volo create volo-test</code><code><pre>.
+├── package.json
+├── README.md
+├── tools
+│   ├── build.js
+│   └── r.js
+├── volofile
+└── www
+    ├── index.html
+    └── js
+        ├── app
+        │   └── main.js
+        ├── app.js
+        └── lib
+            └── require.js</pre></code></li>
+            </ul>
+        </article>
+
+        <article>
+            <h1>volo</h1>
+            <ul>
+                <li><code>volo search underscore</code></li>
+                <li><code>volo add underscore</code></li>
+                <li>also <code>volo add -amd documentcloud/underscore exports=_</code></li>
+                <li><code>volo build</code></li>
             </ul>
         </article>
 
@@ -172,7 +209,59 @@
             <h1>component</h1>
             <ul>
                 <li><a href="https://github.com/component/component">https://github.com/component/component</a></li>
+                <li><a href="http://component.io/">http://component.io/</a></li>
+                <li>by <a href="https://twitter.com/tjholowaychuk">@tjholowaychuk</a> (visionmedia), know this guy!</li>
                 <li>CommonJS modules</li>
+                <li>the original <code>component.json</code></li>
+                <li>incompatible with Bower's <code>component.json</code></li>
+                <li>components can include styles, images, scripts, etc.</li>
+                <li>uses GitHub repos</li>
+                <li>dependencies in <code>component.json</code></li>
+            </ul>
+        </article>
+
+        <article>
+            <h1>component</h1>
+            <ul>
+                <li><code>component create component-test</code><code><pre style="margin-top: 1em;">component-test/
+├── component.json
+├── component-test.css
+├── History.md
+├── index.js
+├── Makefile
+├── Readme.md
+└── template.html</pre></code></li>
+            </ul>
+        </article>
+
+        <article>
+            <h1>component</h1>
+            <ul>
+                <li><code>component.json</code>:<code><pre style="margin-top: 1em;">{
+  "name": "component-test",
+  "repo": "kpuputti/component-test",
+  "description": "test",
+  "version": "0.0.1",
+  "keywords": [],
+  "dependencies": {},
+  "development": {},
+  "license": "MIT",
+  "scripts": [
+    "index.js",
+    "template.js"
+  ],
+  "styles": [
+    "component-test.css"
+  ]
+}</pre></code></li>
+            </ul>
+        </article>
+
+        <article>
+            <h1>component</h1>
+            <ul>
+                <li>list of available components: <a href="https://github.com/component/component/wiki/Components">https://github.com/component/component/wiki/Components</a></li>
+                <li>the wiki page above works as the <i>registry</i></li>
             </ul>
         </article>
 
@@ -180,16 +269,38 @@
             <h1>Jam</h1>
             <ul>
                 <li><a href="http://jamjs.org/">http://jamjs.org/</a></li>
+                <li><code>npm install -g jamjs</code></li>
+                <li>browser first</li>
                 <li>AMD modules</li>
+                <li>deps and config in the <code>jam</code> key in <code>package.json</code></li>
+                <li>400 published packages (2013-02-22)</li>
+            </ul>
+        </article>
+
+        <article>
+            <h1>Jam</h1>
+            <ul>
+                <li><code>jam install underscore</code><code><pre style="margin-top: 1em;">.
+└── jam
+    ├── require.config.js
+    ├── require.js
+    └── underscore
+        ├── package.json
+        └── underscore.js</pre></code></li>
+            <li>also <code>ls</code>, <code>upgrade</code>, <code>compile</code>, <code>publish</code> etc.</li>
+            <li>also <code>.jamrc</code> for e.g. repo config</li>
             </ul>
         </article>
 
         <article>
             <h1>Summary</h1>
             <ul>
-                <li>Long live small specialized libs!</li>
+                <li>long live small specialized libs!</li>
                 <li><a href="http://dailyjs.com/2013/01/28/components/">Confused About Components</a> in DailyJS</li>
                 <li><a href="http://wibblycode.wordpress.com/2013/01/01/the-state-of-javascript-package-management/">The State of Javascript Package Management</a></li>
+                <li>we have to solve this s**t: <a href="https://github.com/twitter/bower/issues/110">bower/issues/110</a></li>
+                <li>probably Grunt + Bower will win (looking at you, Yeoman)</li>
+                <li>(Grunt already is _the_ build tool)</li>
             </ul>
         </article>
 
