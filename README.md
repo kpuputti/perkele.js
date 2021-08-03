@@ -2,7 +2,7 @@
 
 Yet another JavaScript slide framework.
 
-http://kpuputti.github.com/perkele.js/
+http://kpuputti.github.io/perkele.js/
 
 ## License
 
